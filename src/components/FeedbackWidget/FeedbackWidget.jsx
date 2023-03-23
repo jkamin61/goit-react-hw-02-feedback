@@ -11,11 +11,11 @@ class FeedbackWidget extends Component {
   state = { ...INITIAL_STATE };
 
 
-  totalTot = () => {
+  totalNumberOfFeedbacks = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
   countPositiveFeedbackPercentage = () => {
-    let gettingPercentage = (this.state.good / this.totalTot()) * 100;
+    let gettingPercentage = (this.state.good / this.totalNumberOfFeedbacks()) * 100;
     return gettingPercentage.toFixed();
   };
 
@@ -66,7 +66,7 @@ class FeedbackWidget extends Component {
               <li>Good: {this.state.good}</li>
               <li>Neutral: {this.state.neutral}</li>
               <li>Bad: {this.state.bad}</li>
-              <li>Total: {this.totalTot()}</li>
+              <li>Total: {this.totalNumberOfFeedbacks()}</li>
               <li>Positive feedback: {this.countPositiveFeedbackPercentage()}%</li>
             </ul>
           </div>
